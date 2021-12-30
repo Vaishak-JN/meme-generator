@@ -1,38 +1,168 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* 
+***********************************
+nav
+********************************** 
+*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  font-family: "Shizuru", cursive;
+  top: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  width: 100vw;
+  padding: 25px;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  height: 100px;
+}
+.logo {
+  height: 60px;
+}
+.nav-title {
+  display: inline-block;
+  font-size: 35px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (max-width: 700px) {
+  nav {
+    gap: 10px;
+    padding: 5px;
+    height: 80px;
+  }
+  .logo {
+    height: 40px;
+  }
+  .nav-title {
+    font-size: 25px;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 
+***********************************
+form
+********************************** 
+*/
+main {
+  padding: 36px;
+}
+
+.form {
+  min-width: auto;
+  max-width: 1100px;
+  margin: 10px auto;
+  padding: 20px 0;
+  /* display: flex;
+  flex-wrap: wrap; */
+
+  /* or */
+  display: grid;
+  grid-template: 50px 50px / 1fr 1fr;
+  gap: 20px;
+}
+.first,
+.second {
+  border-radius: 10px;
+  border: 1px solid rgba(228, 10, 228, 0.315);
+  text-indent: 10px;
+  font-size: 20px;
+}
+.form > input:focus {
+  outline: rgb(177, 7, 177);
+  border: 1px solid rgb(194, 8, 194);
+}
+.form > button {
+  grid-column: 1 / -1;
+  border-radius: 20px;
+  outline: none;
+  color: white;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  font-size: large;
+  cursor: pointer;
+}
+.form > button:hover {
+  background: linear-gradient(90deg, #a626d3 1.18%, #672280 100%);
+}
+
+@media screen and (max-width: 700px) {
+  .form {
+    min-width: auto;
+    max-width: 1100px;
+    margin: 10px auto;
+    padding: 20px 0;
+    /* display: flex;
+  flex-wrap: wrap; */
+
+    /* or */
+    display: grid;
+    grid-template: 50px 50px 50px/ 1fr;
+    gap: 20px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* 
+***********************************
+image
+********************************** 
+*/
+
+.meme-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  overflow: hidden;
+  min-width: auto;
+  max-width: 1100px;
+  margin: 10px auto;
+  position: relative;
+}
+.meme {
+  max-width: 100%;
+  height: 100%;
+}
+.meme-text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.top {
+  top: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .meme-container {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    margin: 5px auto;
+  }
+  .meme {
+    width: 100%;
+    height: auto;
   }
 }
